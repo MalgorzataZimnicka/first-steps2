@@ -54,10 +54,18 @@ body {
 	top: 3.4em;
 	border-radius: 4.68em;
 	margin-left: -0.625em;
+	animation: open 2s infinite;
 }
 
-.face__eye,
-.face__eye-r {
+@keyframes open {
+	50%{
+		transform: rotateX(35deg);
+		transform-origin: top;
+	}
+	
+}
+
+.face__eye {
 	position: absolute;
 	background-color: var(--black);
 	height: 0.62em;
@@ -65,7 +73,6 @@ body {
 	border-radius: 50%;
 	top: 1.87em;
 	left: 1.12em;
-	animation: 2s eye infinite;
 	box-sizing: border-box;
 	border-top: .3em solid var(--black);
 }
