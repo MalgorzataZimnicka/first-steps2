@@ -1,0 +1,132 @@
+:root {
+	--str: 12px;
+	--grey: rgb(24, 24, 24);
+	-green: ;
+}
+
+body {
+	background-color: rgb(24, 24, 24);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.workspace {
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.svg {
+	position: absolute;
+	width: 300px;
+	height: 400px;
+}
+
+.bulb {
+	position: absolute;
+	fill: transparent;
+	stroke-width: var(--str);
+	stroke: rgba(0, 0, 0, 0.5);
+	stroke-linecap: round;
+	stroke-dasharray: 400 600;
+	transform-origin: 50% 25%;
+	transform: translateY(40px) rotate(127deg);
+    
+}
+
+.bulb-light {
+	position: absolute;
+	stroke: white;
+	filter: drop-shadow(0 0 20px white);
+	stroke-linecap: round;
+	stroke-dashoffset: 400;
+    transition: 2s;
+}
+
+.activelight {
+	animation: light 1s forwards;
+}
+
+.passivelight {
+	animation: light2 1s forwards;
+}
+
+@keyframes light {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes light2 {
+	0% {
+		stroke-dashoffset: 0;
+	}
+}
+
+.bulb__bottom {
+	position: absolute;
+	fill: transparent;
+	stroke-width: var(--str);
+	stroke: rgb(40, 40, 30);
+	stroke-dasharray: 500;
+	stroke-dashoffset: 450;
+	transform-origin: 50% 25%;
+	transform: translateY(40px) rotate(71deg);
+	stroke-linecap: round;
+    filter: drop-shadow(2px -2px 3px rgba(0, 0, 0, 0.5));
+}
+
+.bulb__bottom-s {
+	transform: translateY(65px) rotate(71deg);
+}
+
+.bulb__bottom-t {
+	stroke-dashoffset: 470;
+	transform: translateY(90px) rotate(78deg);
+}
+
+.switch {
+	position: absolute;
+	width: 120px;
+	height: 50px;
+	border-radius: 50px;
+	background-color: rgb(40, 40, 30);
+	display: flex;
+	align-items: center;
+	top: 350px;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.dot {
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	border-radius: 40px;
+	left: 8px;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.activedot {
+	animation: switchdot 0.5s linear forwards;
+}
+
+@keyframes switchdot {
+	100% {
+		transform: translateX(68px);
+	}
+}
+
+.passivedot {
+	animation: switchdot2 0.5s linear forwards;
+}
+
+@keyframes switchdot2 {
+	0% {
+		transform: translateX(68px);
+	}
+}
