@@ -8,7 +8,6 @@ setInterval(() => {
 
 	let m = new Date().getMinutes();
 	let s = new Date().getSeconds();
-    console.log()
 
 	m = m < 10 ? "0" + m : m;
 	s = s < 10 ? "0" + s : s;
