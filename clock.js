@@ -1,28 +1,27 @@
 setInterval(() => {
-let boxes = document.querySelectorAll(".container");
+	//minutes and seconds
+	let boxes = document.querySelectorAll(".container");
 
-boxes.forEach((box) => {
-	let timemin = box.querySelector(".tekst__number-min");
-	let timesec = box.querySelector(".tekst__number-sec");
+	boxes.forEach((box) => {
+		let timemin = box.querySelector(".tekst__number-min");
+		let timesec = box.querySelector(".tekst__number-sec");
 
-	let mm = box.querySelector(".time__circle-m");
-	let ss = box.querySelector(".time__circle-s");
+		let mm = box.querySelector(".time__circle-m");
+		let ss = box.querySelector(".time__circle-s");
 
-	let m = new Date().getMinutes();
-	let s = new Date().getSeconds();
+		let m = new Date().getMinutes();
+		let s = new Date().getSeconds();
 
-	m = m < 10 ? "0" + m : m;
-	s = s < 10 ? "0" + s : s;
+		m = m < 10 ? "0" + m : m;
+		s = s < 10 ? "0" + s : s;
 
-	mm.style.strokeDashoffset = 500 - (500 * m) / 60;
-	ss.style.strokeDashoffset = 625 - (625 * s) / 60;
+		mm.style.strokeDashoffset = 500 - (500 * m) / 60;
+		ss.style.strokeDashoffset = 625 - (625 * s) / 60;
 
-	timemin.innerHTML = m;
-	timesec.innerHTML = s;
-});
-});
-
-setInterval(() => {
+		timemin.innerHTML = m;
+		timesec.innerHTML = s;
+	});
+	//hours
 	const b = new Date().getTimezoneOffset() / 60;
 
 	let hoursny = document.querySelector(".tekst__number-h-ny");
@@ -38,8 +37,11 @@ setInterval(() => {
 	let hw = ut + 1;
 	let ht = ut + 9;
 
+	hny = hny < 1 ? hny + 24 : hny;
 	hny = hny < 10 ? "0" + hny : hny;
+	hw = hw > 24 ? hw - 24 : hw;
 	hw = hw < 10 ? "0" + hw : hw;
+	ht = ht > 24 ? ht - 24 : ht;
 	ht = ht < 10 ? "0" + ht : ht;
 
 	hoursny.innerHTML = hny;
