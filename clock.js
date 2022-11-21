@@ -1,26 +1,50 @@
 setInterval(() => {
-let hours = document.querySelector(".tekst__number-h-w");
-let minutes = document.querySelector(".tekst__number-min-w");
-let seconds = document.querySelector(".tekst__number-sec-w");
+//check why querySelectorAll don't work
+	let minutes = document.querySelector(".tekst__number-min");
+	let seconds = document.querySelector(".tekst__number-sec");
 
-let hhw = document.querySelector(".time__circle-h-w");
-let mmw = document.querySelector(".time__circle-m-w")
-let ssw = document.querySelector(".time__circle-s-w");
+	let mm = document.querySelector(".time__circle-m");
+	let ss = document.querySelector(".time__circle-s");
 
-let h = new Date().getHours();
-let m = new Date().getMinutes();
-let s = new Date().getSeconds();
+	let m = new Date().getMinutes();
+	let s = new Date().getSeconds();
+    console.log()
 
-h = h < 10 ? "0" + h : h;
-m = (m < 10) ? "0" + m : m;
-s = s < 10 ? "0" + s : s;
+	m = m < 10 ? "0" + m : m;
+	s = s < 10 ? "0" + s : s;
 
-hours.innerHTML = h;
-minutes.innerHTML = m;
-seconds.innerHTML = s;
+	minutes.innerHTML = m;
+	seconds.innerHTML = s;
 
-hhw.style.strokeDashoffset = 380 - (380 * h/2)/24;
-mmw.style.strokeDashoffset = 500 - (500 * m)/60;
-ssw.style.strokeDashoffset = 625 - (625 * s)/60;
+	mm.style.strokeDashoffset = 500 - (500 * m) / 60;
+	ss.style.strokeDashoffset = 625 - (625 * s) / 60;
 });
 
+setInterval(() => {
+    const b = new Date().getTimezoneOffset() / 60;
+
+	let hoursny = document.querySelector(".tekst__number-h-ny");
+	let hoursw = document.querySelector(".tekst__number-h-w");
+	let hourst = document.querySelector(".tekst__number-h-t");
+
+	let hhny = document.querySelector(".time__circle-h-ny");
+	let hhw = document.querySelector(".time__circle-h-w");
+	let hht = document.querySelector(".time__circle-h-t");
+
+	const ut = new Date().getHours() + b;
+	let hny = ut - 5;
+	let hw = ut + 1;
+	let ht = ut + 9;
+
+    hny = hny < 10 ? "0" + hny : hny;
+	hw = hw < 10 ? "0" + hw : hw;
+    ht = ht < 10 ? "0" + ht : ht;
+
+	hoursny.innerHTML = hny;
+    hoursw.innerHTML = hw;
+    hourst.innerHTML = ht;
+
+    hhny.style.strokeDashoffset = 380 - (380 * hny) / 2 / 24;
+	hhw.style.strokeDashoffset = 380 - (380 * hw) / 2 / 24;
+    hht.style.strokeDashoffset = 380 - (380 * ht) / 2 / 24;
+});

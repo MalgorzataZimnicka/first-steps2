@@ -1,5 +1,5 @@
 :root {
-	--black: rgb(19, 19, 19);
+	--black: rgba(19, 19, 19, 0.3);
 	--grey: rgb(33, 37, 45);
 	--white: rgb(240, 240, 240);
 	--pink: rgb(255, 74, 104);
@@ -29,6 +29,7 @@ svg {
 	width: 210px;
 	height: 210px;
     position: absolute;
+	top: 0;
 }
 .time__circle {
 	fill: transparent;
@@ -36,21 +37,21 @@ svg {
 	stroke-width: 4;
 }
 
-.time__circle-h-w {
+.time__circle-h-w,.time__circle-h-ny, .time__circle-h-t  {
 	stroke: var(--pink);
 	stroke-dasharray: 375;
 	transform-origin: 50% 50%;
 	transform: rotate(270deg);
 }
 
-.time__circle-m-w {
+.time__circle-m {
 	stroke: var(--yellow);
 	stroke-dasharray: 500;
 	transform-origin: 50% 50%;
 	transform: rotate(270deg);
 }
 
-.time__circle-s-w {
+.time__circle-s {
 	stroke: var(--blue);
 	stroke-dasharray: 625;
 	transform-origin: 50% 50%;
@@ -63,7 +64,7 @@ svg {
 	display: flex;
 	flex-direction: column;
     align-items: center;
-	margin-top: 250px;
+	margin-top: 170px;
     font-family: "Dancing Script", cursive;
 }
 
