@@ -1,10 +1,12 @@
 setInterval(() => {
-//check why querySelectorAll don't work
-	let minutes = document.querySelector(".tekst__number-min");
-	let seconds = document.querySelector(".tekst__number-sec");
+let boxes = document.querySelectorAll(".container");
 
-	let mm = document.querySelector(".time__circle-m");
-	let ss = document.querySelector(".time__circle-s");
+boxes.forEach((box) => {
+	let timemin = box.querySelector(".tekst__number-min");
+	let timesec = box.querySelector(".tekst__number-sec");
+
+	let mm = box.querySelector(".time__circle-m");
+	let ss = box.querySelector(".time__circle-s");
 
 	let m = new Date().getMinutes();
 	let s = new Date().getSeconds();
@@ -12,15 +14,16 @@ setInterval(() => {
 	m = m < 10 ? "0" + m : m;
 	s = s < 10 ? "0" + s : s;
 
-	minutes.innerHTML = m;
-	seconds.innerHTML = s;
-
 	mm.style.strokeDashoffset = 500 - (500 * m) / 60;
 	ss.style.strokeDashoffset = 625 - (625 * s) / 60;
+
+	timemin.innerHTML = m;
+	timesec.innerHTML = s;
+});
 });
 
 setInterval(() => {
-    const b = new Date().getTimezoneOffset() / 60;
+	const b = new Date().getTimezoneOffset() / 60;
 
 	let hoursny = document.querySelector(".tekst__number-h-ny");
 	let hoursw = document.querySelector(".tekst__number-h-w");
@@ -35,15 +38,15 @@ setInterval(() => {
 	let hw = ut + 1;
 	let ht = ut + 9;
 
-    hny = hny < 10 ? "0" + hny : hny;
+	hny = hny < 10 ? "0" + hny : hny;
 	hw = hw < 10 ? "0" + hw : hw;
-    ht = ht < 10 ? "0" + ht : ht;
+	ht = ht < 10 ? "0" + ht : ht;
 
 	hoursny.innerHTML = hny;
-    hoursw.innerHTML = hw;
-    hourst.innerHTML = ht;
+	hoursw.innerHTML = hw;
+	hourst.innerHTML = ht;
 
-    hhny.style.strokeDashoffset = 380 - (380 * hny) / 2 / 24;
+	hhny.style.strokeDashoffset = 380 - (380 * hny) / 2 / 24;
 	hhw.style.strokeDashoffset = 380 - (380 * hw) / 2 / 24;
-    hht.style.strokeDashoffset = 380 - (380 * ht) / 2 / 24;
+	hht.style.strokeDashoffset = 380 - (380 * ht) / 2 / 24;
 });
