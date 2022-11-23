@@ -1,0 +1,137 @@
+:root {
+	--orange: rgb(255, 174, 93);
+	--white: rgb(237, 232, 226);
+	--white2: rgba(255, 255, 255, 0.3);
+}
+
+.main,
+.aside {
+	background-color: var(--white2);
+}
+
+body {
+	height: 100vh;
+	background-color: var(--white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+body::before {
+	position: absolute;
+	top: 0;
+	content: "";
+	height: 40%;
+	width: 100vw;
+	background-color: var(--orange);
+	z-index: -1;
+}
+.workspace {
+	position: absolute;
+	width: 400px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.aside {
+	position: absolute;
+	height: 20%;
+	width: 400px;
+	top: 20%;
+	border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+.main {
+	position: absolute;
+	height: 40%;
+	width: 400px;
+	top: 40%;
+	display: flex;
+	border-radius: 0 0 20px 20px;
+}
+
+.main__operators {
+	display: grid;
+	width: 25%;
+}
+
+.main__numbers {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	width: 75%;
+}
+
+.main__number:hover,
+.main__operator:hover {
+	color: var(--orange)
+}
+
+.main__number {
+	background-color: transparent;
+	border: none;
+}
+
+.main__operator {
+	background-color: transparent;
+	border: none;
+}
+
+.clear {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	top: 40%;
+	transform: translateY(-50%) translateX(-50%);
+	background-color: var(--orange);
+	left: 100px;
+	border: none;
+	z-index: 1;
+}
+
+.equal {
+	position: absolute;
+	width: 25%;
+	height: 10%;
+	right: 0px;
+	bottom: 20%;
+	border-radius: 100% 0 20% 0;
+	background-color: var(--orange);
+	border: none;
+}
+
+/*font*/
+.main__number,
+.main__operator {
+	font-size: 20px;
+}
+
+.aside__prevnum, .aside__operator, .aside__nownum{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    padding-right: 15px;
+}
+
+.aside__nownum{
+    font-size: 30px;
+    color: black;
+}
+
+.clear, .equal{
+    font-size: 20px;
+    color: white;
+}
+
+@media (max-width=450px){
+    .aside, .main{
+        width: 100%;
+    }
+}
