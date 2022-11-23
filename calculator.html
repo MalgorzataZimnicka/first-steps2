@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,53 @@
     <title>calculator</title>
     <link rel="stylesheet" href="calculator.css">
 </head>
+
 <body>
+
+    <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width=500px id="blobSvg"
+        style="opacity: 1;" filter="blur(0px)">
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color: rgb(248, 35, 78);"></stop>
+                <stop offset="100%" style="stop-color: rgb(255, 148, 39);"></stop>
+            </linearGradient>
+            <pattern id="stripe2" 
+            width="10" height="4" 
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(45)">
+            <rect width="2" height="4" transform="translate(0,0)" fill="url(#gradient)"></rect>
+          </pattern>
+        </defs>
+        <path id="blob" fill="url(#stripe2)" style="opacity: 1;" transform="translate(-140 250)">
+            <animate attributeName="d" dur="16.4s" repeatCount="indefinite"
+                values="M420.7122,331.4339Q380.09423,412.86779,301.16508,392.29219Q222.23594,371.7166,157.11322,349.24982Q91.99051,326.78305,53.64135,232.38203Q15.29219,137.98101,118.09898,129.47187Q220.90577,120.96273,294.67458,111.25967Q368.44339,101.55661,414.88678,175.77831Q461.33017,250,420.7122,331.4339Z;M392.2525,331.53996Q379.05994,413.07992,285.7525,456.15485Q192.44505,499.22978,100.80019,432.44731Q9.15533,365.66484,30.81018,260.57493Q52.46503,155.48501,121.45005,74.10764Q190.43506,-7.26974,268.13261,60.97003Q345.83016,129.2098,375.63761,189.6049Q405.44505,250,392.2525,331.53996Z;M436.87032,349.05548Q408.4258,448.11097,306.06935,451.62968Q203.7129,455.14839,157.4258,385.87516Q111.13871,316.60194,93.22677,241.12968Q75.31484,165.65742,135.48613,87.80097Q195.65742,9.94452,281.80097,56.34258Q367.94452,102.74064,416.62968,176.37032Q465.31484,250,436.87032,349.05548Z;M420.7122,331.4339Q380.09423,412.86779,301.16508,392.29219Q222.23594,371.7166,157.11322,349.24982Q91.99051,326.78305,53.64135,232.38203Q15.29219,137.98101,118.09898,129.47187Q220.90577,120.96273,294.67458,111.25967Q368.44339,101.55661,414.88678,175.77831Q461.33017,250,420.7122,331.4339Z">
+            </animate>
+        </path>
+    </svg>
+    <svg class="svg-2" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width=500px id="blobSvg"
+        style="opacity: 1;" filter="blur(0px)">
+        <defs>
+            <pattern id="stripe" 
+            width="10" height="4" 
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(45)">
+            <rect width="2" height="4" transform="translate(0,0)" fill="white"></rect>
+          </pattern>
+          <mask id="mask-stripe">
+            <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-stripe)" />
+          </mask>   
+        </defs>
+        <path id="blob" fill="url(#stripe)" style="opacity: 1;" transform="translate(170 -220)">
+            <animate attributeName="d" dur="16.4s" repeatCount="indefinite"
+                values="M420.7122,331.4339Q380.09423,412.86779,301.16508,392.29219Q222.23594,371.7166,157.11322,349.24982Q91.99051,326.78305,53.64135,232.38203Q15.29219,137.98101,118.09898,129.47187Q220.90577,120.96273,294.67458,111.25967Q368.44339,101.55661,414.88678,175.77831Q461.33017,250,420.7122,331.4339Z;M392.2525,331.53996Q379.05994,413.07992,285.7525,456.15485Q192.44505,499.22978,100.80019,432.44731Q9.15533,365.66484,30.81018,260.57493Q52.46503,155.48501,121.45005,74.10764Q190.43506,-7.26974,268.13261,60.97003Q345.83016,129.2098,375.63761,189.6049Q405.44505,250,392.2525,331.53996Z;M436.87032,349.05548Q408.4258,448.11097,306.06935,451.62968Q203.7129,455.14839,157.4258,385.87516Q111.13871,316.60194,93.22677,241.12968Q75.31484,165.65742,135.48613,87.80097Q195.65742,9.94452,281.80097,56.34258Q367.94452,102.74064,416.62968,176.37032Q465.31484,250,436.87032,349.05548Z;M420.7122,331.4339Q380.09423,412.86779,301.16508,392.29219Q222.23594,371.7166,157.11322,349.24982Q91.99051,326.78305,53.64135,232.38203Q15.29219,137.98101,118.09898,129.47187Q220.90577,120.96273,294.67458,111.25967Q368.44339,101.55661,414.88678,175.77831Q461.33017,250,420.7122,331.4339Z">
+            </animate>
+        </path>
+    </svg>
     <div class="workspace">
         <div class="aside">
-            <p class="aside__prevnum">11</p>
-            <p class="aside__operator">+</p>
-            <p class="aside__nownum">22</p>
+            <p class="aside__prevnum"></p>
+            <span class="aside__operator"></span>
+            <p class="aside__nownum"></p>
         </div>
         <button class="clear">C</button>
         <div class="main">
@@ -38,6 +80,7 @@
         </div>
         <button class="equal">=</button>
     </div>
-    <script></script>
+    <script src="calculator.js"></script>
 </body>
+
 </html>
