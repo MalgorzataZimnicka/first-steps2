@@ -11,10 +11,10 @@
 	--boxshadow: 3px 3px 5px 1px rgba(44, 26, 78, 0.1);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
 
-*{
-	font-family: 'Montserrat', sans-serif;
+* {
+	font-family: "Montserrat", sans-serif;
 }
 
 .main,
@@ -35,7 +35,7 @@ body::before {
 	top: 0;
 	content: "";
 	height: 40%;
-	width: 100vw;
+	width: 100%;
 	background: var(--gradient);
 	z-index: -1;
 }
@@ -50,7 +50,6 @@ body::before {
 	right: 0px;
 	top: 0px;
 }
-
 
 .workspace {
 	position: absolute;
@@ -74,7 +73,7 @@ body::before {
 .main {
 	position: absolute;
 	height: 66.5%;
-	width: 400px;
+	width: 100%;
 	top: 33.5%;
 	display: flex;
 	border-radius: 0 0 20px 20px;
@@ -106,13 +105,13 @@ body::before {
 
 .clear {
 	position: absolute;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	border-radius: 50%;
 	top: 33.5%;
 	transform: translateY(-50%) translateX(-50%);
 	background: var(--gradient);
-	left: 100px;
+	left: 25%;
 	border: none;
 	z-index: 1;
 	box-shadow: var(--boxshadow);
@@ -121,8 +120,8 @@ body::before {
 .equal {
 	box-sizing: border-box;
 	position: absolute;
-	width: 24%;
-	height: 18%;
+	width: 80px;
+	height: 80px;
 	right: 0px;
 	bottom: 0px;
 	border-radius: 100% 0 20px 0;
@@ -131,8 +130,8 @@ body::before {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
-	padding-right: 8%;
-	padding-bottom: 5%;
+	padding-right: 25px;
+	padding-bottom: 20px;
 }
 
 /*fonts*/
@@ -160,17 +159,40 @@ body::before {
 	color: white;
 }
 
-.clear:hover, .clear:active,
-.equal:hover, .equal:active{
+.clear:hover,
+.clear:active,
+.equal:hover,
+.equal:active {
 	color: var(--orange);
 }
 
 /*why active don't work?*/
 
-.main__number:hover, .main__number:active,
-.main__operator:hover, .main__operator:active {
+.main__number:hover,
+.main__number:active,
+.main__operator:hover,
+.main__operator:active {
 	color: var(--pink);
 	border: none;
 }
 
-/*add mobile version*/
+@media (max-width: 450px) {
+	.workspace {
+		height: 80%;
+		width: 90%;
+		top: 10%;
+	}
+	.clear {
+		top: 37%;
+	}
+	.equal{
+		width: 70px;
+		height: 70px;
+		padding-right: 15px;
+		padding-bottom: 10px;
+	}
+	.svg,
+	svg {
+		width: 0;
+	}
+}

@@ -10,24 +10,42 @@ const nownum = document.querySelector(".aside__nownum");
 operator.forEach((button) => button.addEventListener("click", operate));
 numbers.forEach((button) => button.addEventListener("click", number));
 equal.addEventListener("click", resultFunction);
-clear.addEventListener("clik", clearFunction);
+clear.addEventListener("click", clearFunction);
 
 let result = "";
 
 function number() {
+	if (this.textContent === "." && nownum.innerHTML.includes(".")) return;
+	if (this.textContent === "." && nownum.innerHTML === "")
+		nownum.innerHTML = "0";
 	nownum.innerHTML += this.textContent;
 }
 
 function operate() {
+	if (nownum.innerHTML === "" && prevnum.innerHTML === '' && this.textContent === "-") {
+		nownum.innerHTML = "-";
+		return;
+	}
+
+	if (sign.innerHTML !== "" && nownum.innerHTML !== "") {
+		resultFunction();
+	}
+
+	if (sign.innerHTML !== "") {
+		sign.innerHTML = this.textContent;
+		return;
+	}
+
 	prevnum.innerHTML = nownum.innerHTML;
 	sign.innerHTML = this.textContent;
 	nownum.innerHTML = "";
 }
-/*fix conditions*/
 
 function resultFunction() {
-	let b = Number(nownum.innerHTML);
-	let a = Number(prevnum.innerHTML);
+	if (prevnum.innerHTML === "" || nownum.innerHTML === "") return;
+
+	let a = Number(nownum.innerHTML);
+	let b = Number(prevnum.innerHTML);
 	let operatore = sign.innerHTML;
 
 	switch (operatore) {
@@ -45,9 +63,9 @@ function resultFunction() {
 			break;
 	}
 
-	prevnum.innerHTML = result;
-	nownum.innerHTML = "";
-    sign.innerHTML = '';
+	nownum.innerHTML = result;
+	prevnum.innerHTML = "";
+	sign.innerHTML = "";
 }
 
 function clearFunction() {
@@ -56,5 +74,3 @@ function clearFunction() {
 	prevnum.innerHTML = "";
 	sign.innerHTML = "";
 }
-
-/*check exceptions and correct them*/
