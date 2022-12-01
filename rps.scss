@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+
+$white: #f0efe2;
+$orange: #ff9369;
+$green: #7b8a56;
+$blue: #363d4a;
+$shadow: -5px 5px 10px transparentize($blue, 0.5), inset -1px 1px 1px $white;
+
+* {
+	font-family: "Montserrat", sans-serif;
+	color: $white;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: linear-gradient(180deg, $white, $blue);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body::after {
+	width: 500px;
+	height: 500px;
+	background: $white;
+}
+
+section {
+	position: absolute;
+	width: 80%;
+	height: 60%;
+	border-radius: 20px;
+	box-shadow: $shadow;
+	max-width: 1200px;
+	min-width: 900px;
+}
+
+aside {
+	position: absolute;
+	width: 140px;
+	height: 110%;
+	left: 5%;
+	top: -5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	.play {
+		width: 100%;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		box-shadow: $shadow;
+		border: none;
+		background: $blue;
+	}
+	.results {
+		width: 100%;
+		height: 70%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 70px;
+		background-color: $blue;
+		box-shadow: $shadow;
+		.results__title {
+			padding-top: 30px;
+		}
+		.results__summary {
+			padding-bottom: 30px;
+		}
+	}
+}
+
+.main {
+	position: absolute;
+	width: 80%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	left: auto;
+	right: 0;
+	.player {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.icon {
+		width: 140px;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: $shadow;
+	}
+}
+
+svg {
+	position: absolute;
+	transform: scale(0.4);
+}
+
+.pick {
+	position: absolute;
+	@for $i from 0 to 8 {
+		.letter#{$i} {
+			transform: (rotate(($i * 20) + deg));
+			background-color: rgb(($i * 10), ($i * 5), ($i * 20));
+		}
+	}
+}
+
+.btn:hover,
+.play:hover {
+	transition: 2s;
+	transform: scale(1.2);
+}
+
+.svg {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

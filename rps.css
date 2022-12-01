@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  color: #f0efe2;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f0efe2), to(#363d4a));
+  background: linear-gradient(180deg, #f0efe2, #363d4a);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body::after {
+  width: 500px;
+  height: 500px;
+  background: #f0efe2;
+}
+
+section {
+  position: absolute;
+  width: 80%;
+  height: 60%;
+  border-radius: 20px;
+  -webkit-box-shadow: -5px 5px 10px rgba(54, 61, 74, 0.5), inset -1px 1px 1px #f0efe2;
+          box-shadow: -5px 5px 10px rgba(54, 61, 74, 0.5), inset -1px 1px 1px #f0efe2;
+  max-width: 1200px;
+  min-width: 900px;
+}
+
+aside {
+  position: absolute;
+  width: 140px;
+  height: 110%;
+  left: 5%;
+  top: -5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+aside .play {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  -webkit-box-shadow: -5px 5px 10px rgba(54, 61, 74, 0.5), inset -1px 1px 1px #f0efe2;
+          box-shadow: -5px 5px 10px rgba(54, 61, 74, 0.5), inset -1px 1px 1px #f0efe2;
+  border: none;
+  background: #363d4a;
+}
+aside .results {
+  width: 100%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 70px;
+  background-color: #363d4a;
+  -webkit-box-shadow: -5px 5px 10px rgba(54, 61, 74, 0.5), inset -1px 1px 1px #f0efe2;
+          box-shadow: -5px 5px 10px rgba(54, 61, 74, 0.5), inset -1px 1px 1px #f0efe2;
+}
+aside .results .results__title {
+  padding-top: 30px;
+}
+aside .results .results__summary {
+  padding-bottom: 30px;
+}
+
+.main {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  left: auto;
+  right: 0;
+}
+.main .player {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main .icon {
+  width: 140px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: -5px 5px 10px rgba(54, 61, 74, 0.5), inset -1px 1px 1px #f0efe2;
+          box-shadow: -5px 5px 10px rgba(54, 61, 74, 0.5), inset -1px 1px 1px #f0efe2;
+}
+
+svg {
+  position: absolute;
+  -webkit-transform: scale(0.4);
+          transform: scale(0.4);
+}
+
+.pick {
+  position: absolute;
+}
+.pick .letter0 {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  background-color: rgb(0, 0, 0);
+}
+.pick .letter1 {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  background-color: rgb(10, 5, 20);
+}
+.pick .letter2 {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  background-color: rgb(20, 10, 40);
+}
+.pick .letter3 {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  background-color: rgb(30, 15, 60);
+}
+.pick .letter4 {
+  -webkit-transform: rotate(80deg);
+          transform: rotate(80deg);
+  background-color: rgb(40, 20, 80);
+}
+.pick .letter5 {
+  -webkit-transform: rotate(100deg);
+          transform: rotate(100deg);
+  background-color: rgb(50, 25, 100);
+}
+.pick .letter6 {
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+  background-color: rgb(60, 30, 120);
+}
+.pick .letter7 {
+  -webkit-transform: rotate(140deg);
+          transform: rotate(140deg);
+  background-color: rgb(70, 35, 140);
+}
+
+.btn:hover,
+.play:hover {
+  -webkit-transition: 2s;
+  transition: 2s;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.svg {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
